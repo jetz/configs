@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+
+set timeout 5
+set password "your_password"
+
+spawn ssh -o ServerAliveInterval=30 -o ServerAliveCountMax=10 root@11.22.33.44 -p2222
+expect "password:"
+send "$password\r"
+interact
