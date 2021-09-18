@@ -1,3 +1,13 @@
-host *
-ControlMaster auto
-ControlPath ~/.ssh/master-%r@%h:%p
+Host myhost1
+    HostName 111.111.111.111
+    User root
+    ControlMaster auto
+    ControlPath ~/.ssh/myhost1-%r@%h:%p
+    ControlPersist 8h
+
+Host myhost2
+    HostName 222.222.222.222
+    User root
+    ControlMaster auto
+    ControlPath ~/.ssh/myhost2-%r@%h:%p
+    ControlPersist 8h
